@@ -31,7 +31,9 @@ export const gStyles = {
         height: 120
     },
     canNumper: {
-        display: 'absolute',
-        right: 5
+        position: 'absolute', 
+        color: COLORS.red,
+        top: 35,
+        right: 0
     }
 }
