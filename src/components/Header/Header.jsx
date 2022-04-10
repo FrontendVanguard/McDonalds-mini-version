@@ -1,6 +1,7 @@
 import React from 'react'
-import { Image, Linking, TouchableHighlight, View } from 'react-native'
+import { Image, Linking, TouchableHighlight, View, Text } from 'react-native'
 
+import { gStyles } from './../../pages/styles'
 export const Header = () => {
 	return (
 		<View
@@ -36,6 +37,7 @@ export const Header = () => {
 						height: 45,
 					}}
 				/>
+
 			</View>
 		</View>
 	)
