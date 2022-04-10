@@ -1,0 +1,1 @@
+export { Chicken } from './Chicken.jsx'
