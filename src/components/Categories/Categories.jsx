@@ -46,9 +46,6 @@ export const Categories = () => {
               width: '30%',
               marginBottom: 20,
             }}
-            onPress={() => {
-              loadScene(cat.name)
-            }}
           >
             <TouchableHighlight
               underlayColor={COLORS.secondary}
@@ -60,6 +57,9 @@ export const Categories = () => {
                 paddingRight: 5,
                 backgroundColor: COLORS.gray,
               }}
+              onPress={() => {
+              loadScene(cat.name)
+            }}
             >
               <View style={{ alignItems: 'center' }}>
                 <Image

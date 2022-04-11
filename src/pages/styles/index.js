@@ -6,7 +6,7 @@ import {
 export const gStyles = {
     MainPage: {
         padding: SIZES.padding,
-        paddingTop: 55,
+
         paddingBottom: 75,
         backgroundColor: COLORS.black,
     },
@@ -35,5 +35,31 @@ export const gStyles = {
         color: COLORS.red,
         top: 35,
         right: 0
+    },
+    CanContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        paddingTop: 45,
+        paddingBottom: 75,
+        backgroundColor: COLORS.black,
+        height: 850,
+        padding: SIZES.padding,
+    },
+    Header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 0,
+        backgroundColor: COLORS.black,
+        paddingBottom: 8,
+    },
+    CanItem: {
+        flexDirection: 'row',
+        padding: 8,
+        alignItems: 'center'
+    },
+    CanItemText: {
+        fontSize: 18,
+        marginRight: 15,
     }
 }

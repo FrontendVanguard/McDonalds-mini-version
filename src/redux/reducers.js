@@ -1,7 +1,7 @@
 import { ADD_ITEM, DELETE_ITEM } from './actions'
 
 const initialState = {
-  items: ['123', '321'],
+  items: [],
 }
 
 function itemReducer(state = initialState, action) {
