@@ -12,7 +12,7 @@ export const Popular = () => {
 			</Text>
 			<View
 				style={{
-					marginTop: 30,
+					marginTop: 20,
 					flexDirection: 'row',
 					flexWrap: 'wrap',
 					justifyContent: 'space-between',

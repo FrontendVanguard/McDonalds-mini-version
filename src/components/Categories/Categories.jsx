@@ -21,7 +21,7 @@ export const Categories = () => {
   }
 
   return (
-    <View style={{ paddingTop: 10 }}>
+    <View style={{ paddingTop: 5 }}>
       <Text
         style={{ fontSize: SIZES.h1, fontWeight: 'bold', color: COLORS.white }}
       >
@@ -33,7 +33,7 @@ export const Categories = () => {
 
       <View
         style={{
-          marginTop: 30,
+          marginTop: 20,
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-between',

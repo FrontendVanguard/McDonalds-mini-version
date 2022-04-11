@@ -70,5 +70,5 @@ export const gStyles = {
     CanItemInformation: {
         flexDirection: 'row',
         alignItems: 'center',
-    }
+    },
 }

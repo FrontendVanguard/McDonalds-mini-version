@@ -8,9 +8,9 @@ export const addItem = item => dispatch => {
     });
 }
 
-export const deleteItem = item => dispatch => {
+export const deleteItem = id => dispatch => {
     dispatch({
         type: DELETE_ITEM,
-        payload: item
+        payload: id
     });
 }

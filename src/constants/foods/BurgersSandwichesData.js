@@ -34,5 +34,6 @@ export const BurgersSandwichesData = [
 		name: 'Chicken Parmesan',
 		price: '$ 7.69',
 	},
+	
 ]
 
