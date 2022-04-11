@@ -11,19 +11,21 @@ export const Can = () => {
     <View style={gStyles.CanContainer}>
       {items.map((item, idx) => (
         <View key={idx} style={gStyles.CanItem}>
-          <Text style={gStyles.CanItemText}>{item.name}</Text>
-          <Image
-            source={{
-              uri: item.image,
-            }}
-            style={{
-              width: 51,
-              height: 45,
-            }}
-          />
-          <View>
+          <View style={gStyles.CanItemInformation}>
+            <Text style={gStyles.CanItemText}>{item.name}</Text>
             <Image
-              
+              source={{
+                uri: item.image,
+              }}
+              style={{
+                width: 51,
+                height: 45,
+              }}
+            />
+          </View>
+          <View style={gStyles.CanItemInformation}>
+            <Text style={gStyles.CanPriceText}>{item.price}</Text>
+            <Image
               source={{
                 uri: 'https://www.pngplay.com/wp-content/uploads/7/Delete-Transparent-Background.png',
               }}

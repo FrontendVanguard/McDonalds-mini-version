@@ -56,10 +56,19 @@ export const gStyles = {
     CanItem: {
         flexDirection: 'row',
         padding: 8,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     CanItemText: {
         fontSize: 18,
         marginRight: 15,
+    },
+    CanPriceText: {
+        fontSize: 12,
+        marginRight: 10,
+    },
+    CanItemInformation: {
+        flexDirection: 'row',
+        alignItems: 'center',
     }
 }
