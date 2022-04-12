@@ -9,6 +9,7 @@ import {
   Alert,
 } from 'react-native'
 
+import { useNavigation } from '@react-navigation/native'
 import { gStyles } from '../styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { addItem, deleteItem } from './../../redux/actions'
@@ -33,6 +34,8 @@ export const Can = () => {
     else if (sum > 10) return 0.49
   }
 
+  const allPrice = (deliveryPrice(sum)+Number(sum)).toFixed(2)
+
   const createTwoButtonAlert = () =>
     Alert.alert('Purchase', `want to buy everything for ${(deliveryPrice(sum)+Number(sum)).toFixed(2)} ?`, [
       {
@@ -42,9 +45,16 @@ export const Can = () => {
       {
         text: 'OK',
         onPress: () =>
-          Alert.alert('Succes!', 'purchase completed successfully'),
+          loadScene('Delivery'),
       },
     ])
+
+  const navigation = useNavigation()
+
+  
+  const loadScene = (screenName) => {
+    navigation.navigate(screenName)
+  }
 
   const DeliveryItem = () => {
     return (
@@ -57,11 +67,12 @@ export const Can = () => {
             style={{
               width: 151,
               height: 40,
+              marginBottom: 15
             }}
           />
         </View>
         <View style={gStyles.CanItemInformation}>
-          <Text style={{ fontSize: 20, marginRight: 10}} >{deliveryPrice(sum)} $</Text>
+          <Text style={{ fontSize: 16, marginRight: 10}} >{deliveryPrice(sum)} $</Text>
         </View>
       </View>
     )
@@ -100,7 +111,7 @@ export const Can = () => {
       ))}
       <DeliveryItem />
       <Button
-        title={`Buy all $ ${(deliveryPrice(sum)+Number(sum)).toFixed(2)}`}
+        title={`Buy all $ ${allPrice}`}
         color="#848482"
         onPress={createTwoButtonAlert}
       />

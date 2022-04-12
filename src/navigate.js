@@ -9,6 +9,7 @@ import { Beverages } from './pages/Beverages'
 import { Chicken } from './pages/Chicken'
 import { SnacksSlides } from './pages/SnacksSlides'
 import { Can } from './pages/Can'
+import { Delivery } from './pages/Delivery'
 
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
@@ -50,6 +51,10 @@ export default function Navigate() {
             <Stack.Screen 
                 name="Can"
                 component={Can}
+            />  
+            <Stack.Screen 
+                name="Delivery"
+                component={Delivery}
             />  
         </Stack.Navigator>
     </NavigationContainer>
