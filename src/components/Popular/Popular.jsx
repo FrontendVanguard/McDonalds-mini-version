@@ -1,10 +1,25 @@
 import React from 'react'
-import { Text, Image, TouchableHighlight, View } from 'react-native'
+import { Text, Image, TouchableHighlight, View, Alert } from 'react-native'
 
 import { COLORS, SIZES } from '../../constants/theme'
 import { popular } from '../../constants/popular'
+import { addItem } from './../../redux/actions'
+import { useDispatch } from 'react-redux'
 
 export const Popular = () => {
+	const dispatch = useDispatch()
+	const addItemToStore = (item) => {
+		dispatch(addItem(item))
+	}
+
+	const createTwoButtonAlert = (item) =>
+    Alert.alert(item.name, `wanna add ${item.name} to cart?`, [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+      },
+      { text: 'OK', onPress: () => addItemToStore(item)},
+    ])
 	return (
 		<View style={{ paddingTop: 20 }}>
 			<Text style={{ fontSize: SIZES.h1, fontWeight: 'bold', color: COLORS.white }}>
@@ -36,6 +51,7 @@ export const Popular = () => {
 								paddingRight: 5,
 								backgroundColor: COLORS.gray,
 							}}
+							onPress={()=> {createTwoButtonAlert(product)}}
 						>
 							<View style={{ alignItems: 'center' }}>
 								<Image

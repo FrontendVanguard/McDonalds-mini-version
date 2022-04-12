@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, TouchableHighlight, Button, Pressable  } from 'react-native'
+import { View, Text, Image, TouchableHighlight, Button, Pressable, Alert  } from 'react-native'
 
 import { gStyles } from '../styles'
 import { useSelector, useDispatch } from 'react-redux'
@@ -18,6 +18,15 @@ export const Can = () => {
     console.log(acc)
     return Number(acc) + Number(el.price.split(' ')[1])
   }, "0.00")
+
+  const createTwoButtonAlert = () =>
+  Alert.alert("Purchase", `want to buy everything for ${sum} ?`, [
+    {
+      text: 'Cancel',
+      onPress: () => console.log('Cancel Pressed'),
+    },
+    { text: 'OK', onPress: () => Alert.alert("Succes!", "purchase completed successfully")},
+  ])
   return (
     <View style={gStyles.CanContainer}>
       {items.map((item, idx) => (
@@ -53,6 +62,7 @@ export const Can = () => {
       <Button
         title={`Buy all $ ${sum}`}
         color="#848482"
+        onPress={createTwoButtonAlert}
       />
     </View>
   )
