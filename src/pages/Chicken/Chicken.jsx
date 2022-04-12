@@ -8,13 +8,13 @@ import { Header } from './../../components/Header'
 
 export const Chicken = () => {
   return (
-    <>
+    <View style={gStyles.MainPage}>
     <Header />
     <View style={gStyles.FoodsPageContainer}>
       {ChickenData.map((item) => 
         <Item key={item.name} item={item}/>
       )}
     </View>
-    </>
+    </View>
   )
 }

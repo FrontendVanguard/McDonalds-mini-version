@@ -24,7 +24,7 @@ export const gStyles = {
     Item: {
         width: "40%",
         justifyContent: 'center',
-        alignItems:"center"
+        alignItems:"center",
     },
     ItemImage: {
         width: 120,
