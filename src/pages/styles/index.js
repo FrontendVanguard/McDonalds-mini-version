@@ -71,4 +71,12 @@ export const gStyles = {
         flexDirection: 'row',
         alignItems: 'center',
     },
+    CanItemDelivery: {
+        flexDirection: 'row',
+        padding: 8,
+        paddingLeft: 0,
+        paddingBottom: 18,
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    }
 }

@@ -1,5 +1,13 @@
 import React from 'react'
-import { View, Text, Image, TouchableHighlight, Button, Pressable, Alert  } from 'react-native'
+import {
+  View,
+  Text,
+  Image,
+  TouchableHighlight,
+  Button,
+  Pressable,
+  Alert,
+} from 'react-native'
 
 import { gStyles } from '../styles'
 import { useSelector, useDispatch } from 'react-redux'
@@ -17,16 +25,47 @@ export const Can = () => {
   const sum = items.reduce((acc, el, idx) => {
     console.log(acc)
     return Number(acc) + Number(el.price.split(' ')[1])
-  }, "0.00")
+  }, '0.00')
+
+  const deliveryPrice = (sum) => {
+    if (sum < 5) return 3.49
+    else if (sum < 10) return 1.99
+    else if (sum > 10) return 0.49
+  }
 
   const createTwoButtonAlert = () =>
-  Alert.alert("Purchase", `want to buy everything for ${sum} ?`, [
-    {
-      text: 'Cancel',
-      onPress: () => console.log('Cancel Pressed'),
-    },
-    { text: 'OK', onPress: () => Alert.alert("Succes!", "purchase completed successfully")},
-  ])
+    Alert.alert('Purchase', `want to buy everything for ${(deliveryPrice(sum)+Number(sum)).toFixed(2)} ?`, [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+      },
+      {
+        text: 'OK',
+        onPress: () =>
+          Alert.alert('Succes!', 'purchase completed successfully'),
+      },
+    ])
+
+  const DeliveryItem = () => {
+    return (
+      <View style={gStyles.CanItemDelivery}>
+        <View style={gStyles.CanItemInformation}>
+          <Image
+            source={{
+              uri: 'https://www.seekpng.com/png/full/275-2753778_mcdonalds-delivery-transparent-logo.png',
+            }}
+            style={{
+              width: 151,
+              height: 40,
+            }}
+          />
+        </View>
+        <View style={gStyles.CanItemInformation}>
+          <Text style={{ fontSize: 20, marginRight: 10}} >{deliveryPrice(sum)} $</Text>
+        </View>
+      </View>
+    )
+  }
   return (
     <View style={gStyles.CanContainer}>
       {items.map((item, idx) => (
@@ -59,8 +98,9 @@ export const Can = () => {
           </View>
         </View>
       ))}
+      <DeliveryItem />
       <Button
-        title={`Buy all $ ${sum}`}
+        title={`Buy all $ ${(deliveryPrice(sum)+Number(sum)).toFixed(2)}`}
         color="#848482"
         onPress={createTwoButtonAlert}
       />
